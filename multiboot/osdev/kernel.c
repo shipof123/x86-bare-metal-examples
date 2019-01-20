@@ -93,9 +93,8 @@ void terminal_putchar(char c) {
 }
 
 void terminal_writestring(const char* data) {
-    size_t datalen = strlen(data);
-    for (size_t i = 0; i < datalen; i++)
-        terminal_putchar(data[i]);
+    for (; *data ;data++)
+        terminal_putchar(*data);
 }
 
 #if defined(__cplusplus)
